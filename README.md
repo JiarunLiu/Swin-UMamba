@@ -56,8 +56,19 @@ Here  `MODEL_NAME` can be:
 - `nnUNetTrainerSwinUMambaScratch`: Swin-UMamba model without ImageNet pretraining
 - `nnUNetTrainerSwinUMambaDScratch`: Swin-UMamba$\dagger$  model without ImageNet pretraining
 
-We will release our models later.
+You can download our model checkpoints [here](https://drive.google.com/drive/folders/1Sb8c1k556jFw6jwASttji1ofprh1MbP0?usp=drive_link).
 
 ## Acknowledgements
 
-We thank the authors of [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), [Mamba](https://github.com/state-spaces/mamba), [UMamba](https://github.com/bowang-lab/U-Mamba), and [VMamba](https://github.com/MzeroMiko/VMamba) for making their valuable code & data publicly available.
+We thank the authors of [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), [Mamba](https://github.com/state-spaces/mamba), [UMamba](https://github.com/bowang-lab/U-Mamba), [VMamba](https://github.com/MzeroMiko/VMamba), and [Swin-Unet](https://github.com/HuCaoFighting/Swin-Unet) for making their valuable code & data publicly available.
+
+## Citation
+
+```
+@article{Swin-UMamba,
+    title={Swin-UMamba: Mamba-based UNet with ImageNet-based pretraining},
+    author={Jiarun Liu and Hao Yang and Hong-Yu Zhou and Yan Xi and Lequan Yu and Yizhou Yu and Yong Liang and Guangming Shi and Shaoting Zhang and Hairong Zheng and Shanshan Wang},
+    journal={arXiv preprint arXiv:2402.03302},
+    year={2024}
+}
+```
