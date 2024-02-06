@@ -1,6 +1,6 @@
 # Swin-UMamba: Mamba-based UNet with ImageNet-based pretraining
 
-Official repository for: *Swin-UMamba: Mamba-based UNet with ImageNet-based pretraining*
+Official repository for: *[Swin-UMamba: Mamba-based UNet with ImageNet-based pretraining](https://arxiv.org/abs/2402.03302)*
 
 ![network](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/swin-umamba.png)
 
@@ -15,7 +15,7 @@ conda activate swin_umamba
 pip install torch==2.0.1 torchvision==0.15.2
 pip install causal-conv1d==1.1.1
 pip install mamba-ssm
-pip install torchinfo timm
+pip install torchinfo timm numba
 ```
 
 **Step-2:** Install Swin-UMamba
