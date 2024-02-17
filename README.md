@@ -4,6 +4,15 @@ Official repository for: *[Swin-UMamba: Mamba-based UNet with ImageNet-based pre
 
 ![network](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/swin-umamba.png)
 
+## Main Results
+
+- AbdomenMRI
+  ![AbdomenMRI](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/abdomenmr.png)
+- Endoscopy
+  ![Endoscopy](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/endoscopy.png)
+- Microscopy
+  ![Microscopy](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/microscopy.png)
+
 ## Installation
 
 **Step-1:** Create a new conda environment & install requirements
