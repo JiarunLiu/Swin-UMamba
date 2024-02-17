@@ -7,11 +7,13 @@ Official repository for: *[Swin-UMamba: Mamba-based UNet with ImageNet-based pre
 ## Main Results
 
 - AbdomenMRI
-  ![AbdomenMRI](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/abdomenmr.png)
+<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/abdomenmr.png" width="50%" />
+
 - Endoscopy
-  ![Endoscopy](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/endoscopy.png)
+<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/endoscopy.png" width="50%" />
+
 - Microscopy
-  ![Microscopy](https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/microscopy.png)
+<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/microscopy.png" width="50%" />
 
 ## Installation
 
