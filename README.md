@@ -7,13 +7,11 @@ Official repository for: *[Swin-UMamba: Mamba-based UNet with ImageNet-based pre
 ## Main Results
 
 - AbdomenMRI
-<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/abdomenmr.png" width="50%" />
-
+  `<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/abdomenmr.png" width="50%" />`
 - Endoscopy
-<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/endoscopy.png" width="50%" />
-
+  `<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/endoscopy.png" width="50%" />`
 - Microscopy
-<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/microscopy.png" width="50%" />
+  `<img src="https://github.com/JiarunLiu/Swin-UMamba/blob/main/assets/microscopy.png" width="50%" />`
 
 ## Installation
 
@@ -37,15 +35,24 @@ cd Swin-UMamba/swin_umamba
 pip install -e .
 ```
 
-## Prepare data
+## Prepare data & pretrained model
 
-**Dataset:**  We use the same data & processing strategy following U-Mamba. Download dataset from [U-Mamba](https://github.com/bowang-lab/U-Mamba) and put them into the data folder. Then preprocess the dataset with following command:
+**Dataset:**  
+
+We use the same data & processing strategy following U-Mamba. Download dataset from [U-Mamba](https://github.com/bowang-lab/U-Mamba) and put them into the data folder. Then preprocess the dataset with following command:
 
 ```shell
 nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
 
-**ImageNet pretrained model:** We use the pretrained VMamba-Tiny model from [here](https://drive.google.com/file/d/1ml7nZM-YPYbQurHiodf4dpXHw88dXFfP/view?usp=sharing). You need to put the model checkpoint into `data/pretrained/vmamba/vmamba_tiny_e292.pth`
+**ImageNet pretrained model:** 
+
+We use the ImageNet pretrained VMamba-Tiny model from [VMamba](https://github.com/MzeroMiko/VMamba). You need to download the model checkpoint and put it into `data/pretrained/vmamba/vmamba_tiny_e292.pth`
+
+```
+wget https://github.com/MzeroMiko/VMamba/releases/download/%2320240218/vssmtiny_dp01_ckpt_epoch_292.pth
+mv vssmtiny_dp01_ckpt_epoch_292.pth data/pretrained/vmamba/vmamba_tiny_e292.pth
+```
 
 ## Training
 
