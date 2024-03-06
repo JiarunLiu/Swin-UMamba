@@ -1,5 +1,4 @@
 
-
 import re
 import time
 import math
@@ -450,7 +449,7 @@ class SwinUMamba(nn.Module):
         self,
         in_chans=1,
         out_chans=13,
-        feat_size=[48, 96, 192, 384],
+        feat_size=[48, 96, 192, 384, 768],
         drop_path_rate=0,
         layer_scale_init_value=1e-6,
         hidden_size: int = 768,
@@ -514,9 +513,19 @@ class SwinUMamba(nn.Module):
         self.encoder5 = UnetrBasicBlock(
             spatial_dims=spatial_dims,
             in_channels=self.feat_size[3],
-            out_channels=self.hidden_size,
+            out_channels=self.feat_size[4],
             kernel_size=3,
             stride=1,
+            norm_name=norm_name,
+            res_block=res_block,
+        )
+
+        self.decoder6 = UnetrUpBlock(
+            spatial_dims=spatial_dims,
+            in_channels=self.hidden_size,
+            out_channels=self.feat_size[4],
+            kernel_size=3,
+            upsample_kernel_size=2,
             norm_name=norm_name,
             res_block=res_block,
         )
@@ -584,8 +593,10 @@ class SwinUMamba(nn.Module):
         enc2 = self.encoder2(vss_outs[0])
         enc3 = self.encoder3(vss_outs[1])
         enc4 = self.encoder4(vss_outs[2])
-        enc_hidden = self.encoder5(vss_outs[3])
-        dec3 = self.decoder5(enc_hidden, enc4)
+        enc5 = self.encoder5(vss_outs[3])
+        enc_hidden = vss_outs[4]
+        dec4 = self.decoder6(enc_hidden, enc5)
+        dec3 = self.decoder5(dec4, enc4)
         dec2 = self.decoder4(dec3, enc3)
         dec1 = self.decoder3(dec2, enc2)
         dec0 = self.decoder2(dec1, enc1)
@@ -660,7 +671,7 @@ def get_swin_umamba_from_plans(
     model = SwinUMamba(
         in_chans=num_input_channels,
         out_chans=label_manager.num_segmentation_heads,
-        feat_size=[48, 96, 192, 384],
+        feat_size=[48, 96, 192, 384, 768],
         deep_supervision=deep_supervision,
         hidden_size=768,
     )
@@ -669,5 +680,3 @@ def get_swin_umamba_from_plans(
         model = load_pretrained_ckpt(model)
 
     return model
-
-
