@@ -666,7 +666,7 @@ def load_pretrained_ckpt(
             print(f"Skipping weights: {k}")
             continue
         kr = f"vssm_encoder.{k}"
-        if "patch_embed" in k and ckpt["config"].MODEL.SWIN.IN_CHANS != num_input_channels:
+        if "patch_embed" in k and ckpt['model']["patch_embed.proj.weight"].shape[1] != num_input_channels:
             print(f"Passing weights: {k}")
             continue
         if "downsample" in kr:
